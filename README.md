@@ -14,6 +14,9 @@ To run your own instance of Secateur, you need the following:
 
 - recent versions of [https://docs.docker.com/install/](`docker`) and [https://docs.docker.com/compose/install/](`docker-compose`)
 - credentials for the [Twitter Developer API](https://developer.twitter.com/)
+  * This requires registring for a Developer API account, and then registering your application
+  * Ensure you enable: "Allow this application to be used to sign in with Twitter"
+  * Ensure you add "http://localhost:5000/complete/twitter/" as a Callback URL
 
 If you have those, setting up your developer environment should be straightforward:
 
@@ -26,3 +29,5 @@ That, actually, ought to be all there is to it. Once the docker containers are r
 Once you've logged in, you'll probably want to upgrade your account to be the superuser:
 
 ```$ docker-compose exec app ./manage.py promotesuperuser ${MY_TWITTER_ACCOUNT}```
+
+While secateur is still young, you'll also need to manually allow your account access to use the Twitter API. To do so, you'll need to login to the admin, go to Secateur > Users, and check the box for your account under the "Is Twitter API Enabled?" heading.

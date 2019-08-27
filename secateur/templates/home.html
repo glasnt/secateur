@@ -10,6 +10,7 @@
   {% if user.is_authenticated %}
     {% if not user.is_twitter_api_enabled %}
       <div class="alert alert-warning" role="alert">
+
         <h4 class="alert-heading">An administrator needs to enable your account.</h4>
         <p>
           You've logged in to Secateur, but an administrator needs to enable your access

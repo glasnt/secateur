@@ -37,7 +37,7 @@ class User(AbstractUser):
     @cached_property
     def api(self):
         if not self.is_twitter_api_enabled:
-            raise TwitterApiDisabled()
+            raise TwitterApiDisabled("Permission denied. Have you had your access enabled by an Administrator?")
         access_token = self.twitter_social_auth.extra_data.get("access_token")
         api = twitter.Api(
             consumer_key=os.environ.get("CONSUMER_KEY"),
